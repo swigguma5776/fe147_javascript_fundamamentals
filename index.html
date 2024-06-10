@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Internal JavaScript -->
+    <script>
+        // Whatever JavaScript Code we want
+        // alert('Welcome to our page!')
+        
+        function anotherAlert(){
+            alert('You clicked the internal JS button')
+        }
+        
+        console.log('This is from Internal JS')
+    </script>
+    
+    <!-- External JavaScript: preferred especially for larger projects -->
+    <!-- when adding JS script to <head> add a defer because JS is an impatient language -->
+    <script src="./script.js" defer></script>
+    <title>SE147 Does JS Basics</title>
+</head>
+<body>
+    <!-- Inline JavaScript -->
+    <button onclick="alert('You clicked me')" >Click Me</button>
+    <!-- when using inline JS with links you must add javascript: before your function -->
+    <a href="javascript:alert('You clicked this link')">This is a link</a>
+    <br>
+    <br>
+    <!-- Internal JS reference -->
+    <button onclick="anotherAlert()">Internal JS Button</button>
+    
+<!-- script tag can also go to the bottom of your page -->
+</body>
+</html>
+
+
