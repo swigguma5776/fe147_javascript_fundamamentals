@@ -362,6 +362,56 @@ function addAllNums(...numbers) {
 console.log(addAllNums(7, 11, 82, 101));
 
 
+// STRING MANIPULATIONN & SEARCHING
+
+let message = "Hello SE147 Hello"
+
+console.log(message.length)
+console.log(message.indexOf('SE147')); //returns the START of my value aakin to .index()
+console.log(message.substring(6,)); //substrinng takes 2 arguments 'end' is optional (start, end)
+console.log(message.split(' ')); //no default if you want to split on space you must include ' ' in your ()
+console.log(message.lastIndexOf('Hello')); 
+console.log(message.includes('147')); //lovely search technique for membership check since regular membership check is not allowed in strings
+
+
+// Array search techniques
+console.log(original.includes(1)); //you can do regular membership checks in arrays but also can do the .includes()
+console.log(1 in original); 
+
+
+// REGULAR EXPRESSION
+// same symbols that pythonn utilizies JS also utilizes the main difference is settinng your pattern
+
+let pattern = /SE147/ // using the / to build our patterns
+let pattern2 = /Hello/g //regular expression object 
+// inn the above pattern 'g' stands for global aka searching the ENTIRE string for ALL matches
+
+
+console.log(pattern.test(message)) //output true or false
+console.log(message.match(pattern2)) //output a list (match object) with our matchs
+console.log(message.match(pattern2)['input'])
+
+// the matchAll creates an Iterator object
+// we want to turn this into an array we can manipulate
+// if you KNOW there could be more than 1 match use g in your pattern to search for ALL matches
+// also use the .matchAll if you need information about the matches
+console.log(message.matchAll(pattern2)); //not helpful
+const matchArray = [...message.matchAll(pattern2)]; //needs to turn iterator object into array inorder to grab the informationn from it
+console.log(matchArray); 
+console.log(matchArray[1]['index']); 
+
+let myDigits = "Hey it was nice to meet you. My phone # is 888-392-3993"
+
+let digitPattern = /[\d]{3}-[\d]{3}-[\d]{4}/
+
+console.log(digitPattern.test(myDigits)); 
+
+
+
+
+
+
+
 
 
 
